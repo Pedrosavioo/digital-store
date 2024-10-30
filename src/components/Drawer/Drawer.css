@@ -48,6 +48,9 @@
          }
       }
    }
+}
 
-
+.select {
+   color: var(--primary);
+   border-bottom: 3px solid var(--primary);
 }
