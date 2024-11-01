@@ -1,0 +1,11 @@
+#homepage {
+   background-color: var(--light-gray-3);
+   min-height: 92vh;
+   margin-top: 8vh;
+}
+
+@media (min-width: 850px) {
+   #homepage {
+      margin-top: calc(135px + 1rem);
+   }
+}
