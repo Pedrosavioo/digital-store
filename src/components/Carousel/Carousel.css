@@ -1,0 +1,191 @@
+#carousel {
+   height: 92vh;
+   padding: 1rem 2rem;
+   position: relative;
+   z-index: 1;
+
+   & #ornament-design {
+      position: absolute;
+      right: 0;
+      top: 1rem;
+   }
+
+   & .slick-slider {
+      & .slick-track {
+         & #slide1,
+         #slide2,
+         #slide3 {
+            display: flex;
+            flex-direction: column;
+            height: 82vh;
+
+            & .content-slide {
+               display: flex;
+               height: 60%;
+               flex-direction: column;
+               padding: 2.2rem 0;
+               justify-content: space-between;
+               align-items: center;
+
+               & .p-offers {
+                  color: var(--primary);
+                  font-weight: 700;
+                  margin-bottom: 2rem;
+               }
+
+               & h2 {
+                  text-transform: capitalize;
+                  font-size: 2.7rem;
+                  width: 90%;
+                  font-weight: 800;
+                  text-align: center;
+                  color: var(--dark-gray);
+                  margin-bottom: 2rem;
+                  line-height: 50px;
+               }
+
+               & p {
+                  text-align: center;
+                  color: var(--dark-gray-2);
+                  margin-bottom: 4rem;
+                  font-weight: 500;
+               }
+
+               & button {
+                  width: 90% !important;
+                  letter-spacing: 0.75px;
+               }
+            }
+
+            & #image1,
+            #image2,
+            #image3 {
+               height: 40%;
+               padding: 2rem;
+               background-repeat: no-repeat;
+               background-size: 80%;
+               background-position: center;
+            }
+
+            & #image1 {
+               background-image: url("../../../public/assets/home-slide-4.png");
+            }
+            & #image2 {
+               background-image: url("../../../public/assets/home-slide-5.png");
+            }
+            & #image3 {
+               background-image: url("../../../public/assets/home-slide-6.png");
+               background-size: 60%;
+            }
+         }
+      }
+
+      & .slick-dots {
+         padding-top: 1rem;
+         background-color: var(--light-gray-3);
+         & li {
+            & button {
+               width: 15px;
+               height: 15px;
+               border-radius: 50%;
+               background-color: var(--light-gray-2);
+               position: relative;
+
+               &:before {
+                  content: ""; /* Remove o conteúdo padrão da pseudo-classe */
+               }
+            }
+
+            &.slick-active button {
+               background-color: var(--primary); /* Cor do dot ativo */
+            }
+         }
+      }
+   }
+}
+
+@media (min-width: 850px) {
+   #carousel {
+      height: fit-content;
+
+      & #ornament-design {
+         position: absolute;
+         top: 1rem;
+      }
+
+      & .slick-slider {
+         & .slick-slide {
+            display: flex !important;
+         }
+
+         & .slick-track {
+            & #slide1,
+            #slide2,
+            #slide3 {
+               height: calc(90vh - 135px);
+               width: calc(100vw - 1rem) !important;
+               display: flex !important;
+               flex-direction: row-reverse;
+               justify-content: space-between;
+               align-items: center;
+
+               & .content-slide {
+                  width: 50%;
+                  justify-content: flex-start;
+                  align-items: flex-start;
+
+                  & .p-offers {
+                     color: var(--warning);
+                  }
+
+                  & h2 {
+                     font-size: 64px;
+                     width: 100%;
+                     text-align: left;
+                     color: var(--dark-gray);
+                     line-height: 70px;
+                  }
+
+                  & p {
+                     text-align: left;
+                  }
+
+                  & button {
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     width: fit-content !important;
+                     padding: 1.5rem 5rem;
+                  }
+               }
+
+               & #image1,
+               #image2,
+               #image3 {
+                  width: 60%;
+                  height: 100%;
+                  background-size: 80%;
+               }
+
+               & #image3 {
+                  width: 45%;
+               }
+            }
+         }
+      }
+   }
+}
+
+@media (min-width: 1444px) {
+   #carousel {
+      & .slick-slider {
+         & .slick-track {
+            & #slide1,
+            #slide2,
+            #slide3 {
+               width: calc(1444px - 1rem) !important;
+            }
+         }
+      }
+   }
+}
