@@ -2,7 +2,6 @@ footer {
    display: flex;
    flex-direction: column;
    gap: 2rem;
-   margin-top: 15vh;
    background-color: var(--dark-gray);
    padding: 3rem 2rem;
    color: var(--light-gray-3);
