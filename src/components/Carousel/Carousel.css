@@ -131,6 +131,7 @@
 
                & .content-slide {
                   width: 50%;
+                  padding: 0;
                   justify-content: flex-start;
                   align-items: flex-start;
 
