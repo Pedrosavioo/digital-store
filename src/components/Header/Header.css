@@ -1,6 +1,9 @@
 #header-mobile {
    width: 100vw;
+   min-height: 50px;
+   background-color: var(--white);
    position: fixed;
+   z-index: 10;
    display: flex;
    flex-wrap: wrap;
    align-items: center;
@@ -48,11 +51,21 @@
 
 #header-desktop {
    width: 100%;
-   height: 135px;
+   z-index: 10;
+   background-color: var(--white);
+   position: fixed;
+   min-height: 130px;
    display: flex;
    flex-direction: column;
+   align-items: center;
    justify-content: space-between;
    gap: 1rem;
+
+   & #center-header-desktop {
+      width: 100%;
+      max-width: 1444px;
+      height: 135px;
+   }
 
    & #div-first-desktop {
       width: 100%;

@@ -48,66 +48,72 @@ const Header = () => {
             </header>
          ) : (
             <header id="header-desktop">
-               <div id="div-first-desktop">
-                  <img
-                     src="/assets/icons/logo-header.svg"
-                     alt="Logo Digital Store"
-                     id="img-logo-header"
-                  />
-                  <div id="input-search-mobile">
-                     <input type="text" placeholder="Pesquisar" />
-                     <Search color="var(--dark-gray-2)" />
-                  </div>
-                  <div id="div-buttons-desktop">
-                     <div>
-                        <Button width="100px" content="entrar" type="primary" />
-                        <Button content="Cadastre-se" type="secondary" />
+               <div id="center-header-desktop">
+                  <div id="div-first-desktop">
+                     <img
+                        src="/assets/icons/logo-header.svg"
+                        alt="Logo Digital Store"
+                        id="img-logo-header"
+                     />
+                     <div id="input-search-mobile">
+                        <input type="text" placeholder="Pesquisar" />
+                        <Search color="var(--dark-gray-2)" />
                      </div>
-                     <Badge badgeContent={4} color="error">
-                        <ShoppingCart color="var(--primary)" />
-                     </Badge>
+                     <div id="div-buttons-desktop">
+                        <div>
+                           <Button
+                              width="100px"
+                              content="entrar"
+                              type="primary"
+                           />
+                           <Button content="Cadastre-se" type="secondary" />
+                        </div>
+                        <Badge badgeContent={4} color="error">
+                           <ShoppingCart color="var(--primary)" />
+                        </Badge>
+                     </div>
                   </div>
+                  <nav>
+                     <ul>
+                        <li>
+                           <a
+                              href="#"
+                              onClick={() => setStyledSelected(0)}
+                              className={styledSelected === 0 ? "select" : ""}
+                           >
+                              Home
+                           </a>
+                        </li>
+                        <li>
+                           <a
+                              href="#"
+                              onClick={() => setStyledSelected(1)}
+                              className={styledSelected === 1 ? "select" : ""}
+                           >
+                              Produtos
+                           </a>
+                        </li>
+                        <li>
+                           <a
+                              href="#"
+                              onClick={() => setStyledSelected(2)}
+                              className={styledSelected === 2 ? "select" : ""}
+                           >
+                              Categorias
+                           </a>
+                        </li>
+                        <li>
+                           <a
+                              href="#"
+                              onClick={() => setStyledSelected(3)}
+                              className={styledSelected === 3 ? "select" : ""}
+                           >
+                              Meus Produtos
+                           </a>
+                        </li>
+                     </ul>
+                  </nav>
                </div>
-               <nav>
-                  <ul>
-                     <li>
-                        <a
-                           href="#"
-                           onClick={() => setStyledSelected(0)}
-                           className={styledSelected === 0 ? "select" : ""}
-                        >
-                           Home
-                        </a>
-                     </li>
-                     <li>
-                        <a
-                           href="#"
-                           onClick={() => setStyledSelected(1)}
-                           className={styledSelected === 1 ? "select" : ""}
-                        >
-                           Produtos
-                        </a>
-                     </li>
-                     <li>
-                        <a
-                           href="#"
-                           onClick={() => setStyledSelected(2)}
-                           className={styledSelected === 2 ? "select" : ""}
-                        >
-                           Categorias
-                        </a>
-                     </li>
-                     <li>
-                        <a
-                           href="#"
-                           onClick={() => setStyledSelected(3)}
-                           className={styledSelected === 3 ? "select" : ""}
-                        >
-                           Meus Produtos
-                        </a>
-                     </li>
-                  </ul>
-               </nav>
             </header>
          )}
       </>
