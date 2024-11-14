@@ -7,12 +7,26 @@ import ShoppingCart from "../../icons/ShoppingCart";
 import Search from "../../icons/Search";
 import Button from "../Button/Button";
 import { useSelected } from "../../context/SelectedContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
    const [openSearch, setOpenSearch] = useState(false);
    const isMobile = useMediaQuery("(max-width: 850px)");
 
+   const navigate = useNavigate();
+
    const { styledSelected, setStyledSelected } = useSelected();
+
+   function navigatePage(numberPage: number) {
+      if (numberPage === 0) {
+         navigate("/");
+         setStyledSelected(numberPage);
+      }
+      if (numberPage === 1) {
+         navigate("/produtos");
+         setStyledSelected(numberPage);
+      }
+   }
 
    const handleSearchClick = () => {
       setOpenSearch((prev) => !prev);
@@ -77,8 +91,7 @@ const Header = () => {
                      <ul>
                         <li>
                            <a
-                              href="#"
-                              onClick={() => setStyledSelected(0)}
+                              onClick={() => navigatePage(0)}
                               className={styledSelected === 0 ? "select" : ""}
                            >
                               Home
@@ -86,8 +99,7 @@ const Header = () => {
                         </li>
                         <li>
                            <a
-                              href="#"
-                              onClick={() => setStyledSelected(1)}
+                              onClick={() => navigatePage(1)}
                               className={styledSelected === 1 ? "select" : ""}
                            >
                               Produtos
@@ -95,8 +107,7 @@ const Header = () => {
                         </li>
                         <li>
                            <a
-                              href="#"
-                              onClick={() => setStyledSelected(2)}
+                              onClick={() => navigatePage(2)}
                               className={styledSelected === 2 ? "select" : ""}
                            >
                               Categorias
@@ -104,8 +115,7 @@ const Header = () => {
                         </li>
                         <li>
                            <a
-                              href="#"
-                              onClick={() => setStyledSelected(3)}
+                              onClick={() => navigatePage(3)}
                               className={styledSelected === 3 ? "select" : ""}
                            >
                               Meus Produtos
