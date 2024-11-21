@@ -1,0 +1,180 @@
+{
+   "products": [
+      {
+         "id": "1",
+         "category": "Calçados Femininos",
+         "content": "Tênis Nike Air Max Excee Feminino",
+         "current_price": 349.99,
+         "price_off": 399.99,
+         "percentage_off": 12,
+         "images": [
+            "./assets/products-images/p1/image1.webp",
+            "./assets/products-images/p1/image2.webp",
+            "./assets/products-images/p1/image3.webp",
+            "./assets/products-images/p1/image4.webp",
+            "./assets/products-images/p1/image5.webp"
+         ],
+         "reference": "AMX-EXCEE-FEM",
+         "rating": "4.7",
+         "number_of_stars": 5,
+         "number_of_reviews": 312,
+         "product_description": "Tênis casual feminino Nike Air Max Excee com design moderno e conforto excepcional.",
+         "available_sizes": [34, 35, 36, 37, 38, 39, 40],
+         "colors": ["#FFFFFF", "#000000", "#FFC0CB"]
+      },
+      {
+         "id": "2",
+         "category": "Calçados Femininos",
+         "content": "Tênis Nike Court Vision Low Next Nature Feminino",
+         "current_price": 259.99,
+         "price_off": 299.99,
+         "percentage_off": 13,
+         "images": [
+            "./assets/products-images/p2/image1.webp",
+            "./assets/products-images/p2/image2.webp",
+            "./assets/products-images/p2/image3.webp",
+            "./assets/products-images/p2/image4.webp",
+            "./assets/products-images/p2/image5.webp"
+         ],
+         "reference": "CVL-NEXT-FEM",
+         "rating": "4.5",
+         "number_of_stars": 4.0,
+         "number_of_reviews": 220,
+         "product_description": "Tênis Nike Court Vision Low Next Nature com materiais sustentáveis e estilo clássico.",
+         "available_sizes": [34, 35, 36, 37, 38, 39, 40],
+         "colors": ["#FFFFFF", "#F5F5DC", "#000000"]
+      },
+      {
+         "id": "3",
+         "category": "Calçados Masculinos",
+         "content": "Tênis Nike Impact 4 Masculino",
+         "current_price": 219.99,
+         "price_off": 249.99,
+         "percentage_off": 12,
+         "images": [
+            "./assets/products-images/p3/image1.webp",
+            "./assets/products-images/p3/image2.webp",
+            "./assets/products-images/p3/image3.webp",
+            "./assets/products-images/p3/image4.webp",
+            "./assets/products-images/p3/image5.webp"
+         ],
+         "reference": "IMP-4-MASC",
+         "rating": "4.6",
+         "number_of_stars": 5,
+         "number_of_reviews": 180,
+         "product_description": "Tênis Nike Impact 4 com suporte ideal para atividades esportivas intensas.",
+         "available_sizes": [38, 39, 40, 41, 42, 43, 44],
+         "colors": ["#000000", "#808080", "#0000FF"]
+      },
+      {
+         "id": "4",
+         "category": "Calçados Masculinos",
+         "content": "Tênis Nike Air Max Alpha Trainer 5 Masculino",
+         "current_price": 379.99,
+         "price_off": 449.99,
+         "percentage_off": 16,
+         "images": [
+            "./assets/products-images/p4/image1.webp",
+            "./assets/products-images/p4/image2.webp",
+            "./assets/products-images/p4/image3.webp",
+            "./assets/products-images/p4/image4.webp",
+            "./assets/products-images/p4/image5.webp"
+         ],
+         "reference": "AMX-ALPHA-5-MASC",
+         "rating": "4.8",
+         "number_of_stars": 5.0,
+         "number_of_reviews": 400,
+         "product_description": "Tênis Nike Air Max Alpha Trainer 5 com amortecimento superior e resistência.",
+         "available_sizes": [38, 39, 40, 41, 42, 43, 44],
+         "colors": ["#000000", "#FF0000", "#FFFFFF"]
+      },
+      {
+         "id": "5",
+         "category": "Calçados Masculinos",
+         "content": "Tênis Nike Downshifter 13 Masculino",
+         "current_price": 179.99,
+         "price_off": 199.99,
+         "percentage_off": 10,
+         "images": [
+            "./assets/products-images/p5/image1.webp",
+            "./assets/products-images/p5/image2.webp",
+            "./assets/products-images/p5/image3.webp",
+            "./assets/products-images/p5/image4.webp",
+            "./assets/products-images/p5/image5.webp"
+         ],
+         "reference": "DWN-13-MASC",
+         "rating": "4.3",
+         "number_of_stars": 4,
+         "number_of_reviews": 150,
+         "product_description": "Tênis Nike Downshifter 13 ideal para corridas leves e caminhadas.",
+         "available_sizes": [38, 39, 40, 41, 42, 43, 44],
+         "colors": ["#000000", "#0000FF", "#FFFFFF"]
+      },
+      {
+         "id": "6",
+         "category": "Calçados Masculinos",
+         "content": "Tênis Nike Revolution 7 Masculino",
+         "current_price": 249.99,
+         "price_off": 279.99,
+         "percentage_off": 11,
+         "images": [
+            "./assets/products-images/p6/image1.webp",
+            "./assets/products-images/p6/image2.webp",
+            "./assets/products-images/p6/image3.webp",
+            "./assets/products-images/p6/image4.webp",
+            "./assets/products-images/p6/image5.webp"
+         ],
+         "reference": "REV-7-MASC",
+         "rating": "4.4",
+         "number_of_stars": 4,
+         "number_of_reviews": 250,
+         "product_description": "Tênis Nike Revolution 7 com design esportivo e excelente custo-benefício.",
+         "available_sizes": [38, 39, 40, 41, 42, 43, 44],
+         "colors": ["#000000", "#808080", "#FF0000"]
+      },
+      {
+         "id": "7",
+         "category": "Calçados Masculinos",
+         "content": "Tênis Nike Air Max SC Masculino",
+         "current_price": 319.99,
+         "price_off": 359.99,
+         "percentage_off": 11,
+         "images": [
+            "./assets/products-images/p7/image1.webp",
+            "./assets/products-images/p7/image2.webp",
+            "./assets/products-images/p7/image3.webp",
+            "./assets/products-images/p7/image4.webp",
+            "./assets/products-images/p7/image5.webp"
+         ],
+         "reference": "AMX-SC-MASC",
+         "rating": "4.6",
+         "number_of_stars": 5,
+         "number_of_reviews": 275,
+         "product_description": "Tênis Nike Air Max SC com conforto ideal e visual casual para o dia a dia.",
+         "available_sizes": [38, 39, 40, 41, 42, 43, 44],
+         "colors": ["#FFFFFF", "#C0C0C0", "#000000"]
+      },
+      {
+         "id": "8",
+         "category": "Calçados Masculinos",
+         "content": "Tênis Nike Flex Experience Run 12 Masculino",
+         "current_price": 189.99,
+         "price_off": 229.99,
+         "percentage_off": 17,
+         "images": [
+            "./assets/products-images/p8/image1.webp",
+            "./assets/products-images/p8/image2.webp",
+            "./assets/products-images/p8/image3.webp",
+            "./assets/products-images/p8/image4.webp",
+            "./assets/products-images/p8/image5.webp"
+         ],
+         "reference": "FLEX-12-MASC",
+         "rating": "4.5",
+         "number_of_stars": 4,
+         "number_of_reviews": 145,
+         "product_description": "Tênis Nike Flex Experience Run 12 com design leve e flexível para corridas e treinos.",
+         "available_sizes": [38, 39, 40, 41, 42, 43, 44],
+         "colors": ["#000000", "#A9A9A9", "#FF4500"]
+      }
+   ]
+}
