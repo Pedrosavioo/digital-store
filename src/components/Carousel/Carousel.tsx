@@ -2,7 +2,6 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { url } from "inspector";
 import Button from "../Button/Button";
 import "./Carousel.css";
 
@@ -20,7 +19,11 @@ const Carousel = () => {
 
    return (
       <section id="carousel">
-         <img src="./assets/icons/Ornament.svg" alt="Ornament design" id="ornament-design"/>
+         <img
+            src="./assets/icons/Ornament.svg"
+            alt="Ornament design"
+            id="ornament-design"
+         />
          <Slider {...settings}>
             <div id="slide1">
                <div id="image1" className="image-slide"></div>
