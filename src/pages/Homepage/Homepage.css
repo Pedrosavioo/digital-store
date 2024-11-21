@@ -155,7 +155,6 @@
       align-items: center;
       width: 100%;
       margin-top: calc(135px + 1rem);
-      
 
       & #center-carousel {
          width: 100%;
@@ -195,6 +194,7 @@
          flex-direction: column;
          padding: 106px 2rem;
          gap: 40px;
+         max-width: 1444px;
 
          & #div-title {
             & h4 {
