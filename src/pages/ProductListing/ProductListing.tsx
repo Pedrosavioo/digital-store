@@ -1,78 +1,37 @@
 import { useMediaQuery } from "@mui/material";
-import React, { useState } from "react";
-import Button from "../../components/Button/Button";
-import Filter from "../../icons/Filter";
 import "./ProductListing.css";
 import TemporaryDrawerFilter from "../../components/DrawerFilter/DrawerFilter";
 import CardProduct from "../../components/CardProduct/CardProduct";
-import { Close } from "@mui/icons-material";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useProducts } from "../../context/ProductsContext";
+import { useEffect } from "react";
 
 const ProductListing = () => {
    const search = "Tênis";
    const number_of_results = 389;
 
+   const { pathname } = useLocation();
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, [pathname]);
+
    const isMobile = useMediaQuery("(max-width: 850px)");
 
-   const productsCards = [
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-         percentage_off: 30,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-         percentage_off: 30,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-      },
-   ];
+   const { allProducts, setCurrentProduct } = useProducts();
+
+   const navigate = useNavigate();
+
+   function navigateToProductPage(product?: any) {
+      if (product) {
+         setCurrentProduct(product);
+         navigate(`/product?info=${product.content}`);
+      }
+
+      if (!product) {
+         navigate("/product");
+      }
+   }
 
    return (
       <section id="product-listing">
@@ -224,17 +183,19 @@ const ProductListing = () => {
                   </section>
                )}
                <div id="cards-products">
-                  {productsCards.map((product, index) => (
-                     <CardProduct
-                        key={index}
-                        category={product.category}
-                        content={product.content}
-                        current_price={product.current_price}
-                        image={product.image}
-                        price_off={product.price_off}
-                        percentage_off={product.percentage_off}
-                     />
-                  ))}
+                  {allProducts &&
+                     allProducts.map((product, index) => (
+                        <CardProduct
+                           key={index}
+                           category={product.category}
+                           content={product.content}
+                           current_price={product.current_price}
+                           image={product.images[0]}
+                           price_off={product.price_off}
+                           percentage_off={product.percentage_off}
+                           onClick={() => navigateToProductPage(product)}
+                        />
+                     ))}
                </div>
             </div>
          </div>
