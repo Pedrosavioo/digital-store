@@ -8,6 +8,7 @@ interface ICardProductProps {
    price_off: number;
    current_price: number;
    category: string;
+   onClick: () => void;
 }
 
 const CardProduct: React.FC<ICardProductProps> = ({
@@ -17,9 +18,10 @@ const CardProduct: React.FC<ICardProductProps> = ({
    image,
    price_off,
    percentage_off,
+   onClick,
 }) => {
    return (
-      <div className="card-product">
+      <div className="card-product" onClick={onClick}>
          {percentage_off ? (
             <div
                className="image-card-product"
