@@ -9,6 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import "./Drawer.css";
 import Button from "../Button/Button";
 import { useSelected } from "../../context/SelectedContext";
+import { useNavigate } from "react-router-dom";
 
 export default function TemporaryDrawer() {
    const [open, setOpen] = React.useState(false);
@@ -18,6 +19,19 @@ export default function TemporaryDrawer() {
    };
 
    const { styledSelected, setStyledSelected } = useSelected();
+
+   const navigate = useNavigate();
+
+   function navigateToPage(numberPage: number) {
+      setStyledSelected(numberPage);
+
+      if (numberPage === 0) {
+         navigate("/");
+      }
+      if (numberPage === 1) {
+         navigate("/products");
+      }
+   }
 
    const DrawerList = (
       <Box sx={{ width: 250 }} onClick={toggleDrawer(open)}>
@@ -29,8 +43,7 @@ export default function TemporaryDrawer() {
                      <ul>
                         <li>
                            <a
-                              href=""
-                              onClick={() => setStyledSelected(0)}
+                              onClick={() => navigateToPage(0)}
                               className={styledSelected === 0 ? "select" : ""}
                            >
                               Home
@@ -38,8 +51,7 @@ export default function TemporaryDrawer() {
                         </li>
                         <li>
                            <a
-                              href=""
-                              onClick={() => setStyledSelected(1)}
+                              onClick={() => navigateToPage(1)}
                               className={styledSelected === 1 ? "select" : ""}
                            >
                               Produtos
@@ -47,7 +59,6 @@ export default function TemporaryDrawer() {
                         </li>
                         <li>
                            <a
-                              href=""
                               onClick={() => setStyledSelected(2)}
                               className={styledSelected === 2 ? "select" : ""}
                            >
@@ -56,7 +67,6 @@ export default function TemporaryDrawer() {
                         </li>
                         <li>
                            <a
-                              href=""
                               onClick={() => setStyledSelected(3)}
                               className={styledSelected === 3 ? "select" : ""}
                            >

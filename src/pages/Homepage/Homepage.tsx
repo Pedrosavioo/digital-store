@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Homepage.css";
 import Carousel from "../../components/Carousel/Carousel";
 import CardCollection from "../../components/CardCollection/CardCollection";
@@ -11,8 +11,19 @@ import Tennis from "../../icons/Tennis";
 import LineRight from "../../icons/LineRight";
 import CardProduct from "../../components/CardProduct/CardProduct";
 import Button from "../../components/Button/Button";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useProducts } from "../../context/ProductsContext";
+import { useSelected } from "../../context/SelectedContext";
 
 const Homepage = () => {
+   const { allProducts, setCurrentProduct } = useProducts();
+
+   const { pathname } = useLocation();
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, [pathname]);
+
    const contentCardsCollection = [
       { image: "./assets/collection-1.png", content: "Novo drop supreme" },
       { image: "./assets/collection-2.png", content: "Coleção Adidas" },
@@ -27,66 +38,21 @@ const Homepage = () => {
       { image: <Tennis />, content: "Tênis" },
    ];
 
-   const productsCardsProducts = [
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-         percentage_off: 30,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-         percentage_off: 30,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-      },
-      {
-         image: "./assets/product-image.webp",
-         category: "tenis",
-         content: "K-Swiss V8 - Masculino",
-         current_price: 100,
-         price_off: 200,
-      },
-   ];
+   const { setStyledSelected } = useSelected();
+
+   const navigate = useNavigate();
+
+   function navigateToProductPage(product?: any) {
+      if (product) {
+         setStyledSelected(1);
+         setCurrentProduct(product);
+         navigate(`/product?info=${product.content}`);
+      }
+
+      if (!product) {
+         navigate("/product");
+      }
+   }
 
    return (
       <section id="homepage">
@@ -132,17 +98,19 @@ const Homepage = () => {
                </button>
             </div>
             <div id="cards-products">
-               {productsCardsProducts.map((product, index) => (
-                  <CardProduct
-                     key={index}
-                     category={product.category}
-                     content={product.content}
-                     current_price={product.current_price}
-                     image={product.image}
-                     price_off={product.price_off}
-                     percentage_off={product.percentage_off}
-                  />
-               ))}
+               {allProducts &&
+                  allProducts.map((product, index) => (
+                     <CardProduct
+                        key={index}
+                        category={product.category}
+                        content={product.content}
+                        current_price={product.current_price}
+                        image={product.images[0]}
+                        price_off={product.price_off}
+                        percentage_off={product.percentage_off}
+                        onClick={() => navigateToProductPage(product)}
+                     />
+                  ))}
             </div>
          </section>
 

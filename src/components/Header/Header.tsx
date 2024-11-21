@@ -23,7 +23,7 @@ const Header = () => {
          setStyledSelected(numberPage);
       }
       if (numberPage === 1) {
-         navigate("/produtos");
+         navigate("/products");
          setStyledSelected(numberPage);
       }
    }
